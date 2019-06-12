@@ -1,0 +1,20 @@
+<p>
+  about works!
+</p>
+<div>
+  <div class="col-lg text-center">
+    <button><a href="/about">Update</a></button>
+
+    <h2 class="text-center">PIE chart using Chartjs and Angular 6</h2>
+    <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+          [options]="pieChartOptions"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)">
+          	
+          </canvas>
+      </div>
+
+</div>
