@@ -1,6 +1,11 @@
+/home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/hello/SchoolCategoryInterface.java
+/home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/hello/CardObjInterface.java
+/home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/hello/ThumbnailObjInterface.java
 /home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/topics/TopicController.java
 /home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/topics/TopicService.java
-/home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/hello/HelloController.java
+/home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/hello/SchoolCategoryImpl.java
+/home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/hello/ThumbnailObjImpl.java
+/home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/hello/CardObjImpl.java
 /home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/CourseApiApp.java
 /home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/hello/Graph.java
 /home/vassar/IdeaProjects/course-api/src/main/java/io/javabrains/springbootstarter/topics/Topic.java

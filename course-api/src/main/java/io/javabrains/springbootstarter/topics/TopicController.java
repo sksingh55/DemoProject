@@ -24,9 +24,8 @@ public class TopicController {
 	public Object returnTopics()
 	{
 		CardObjImpl temp = new CardObjImpl();
-		temp.setCardName("School Category");
-		temp.setCardValue("Total # of Schools: 32423");
-
+		temp.setCardName("School");
+		temp.setCardValue("Number of Schools: 32423");
 		ThumbnailObjImpl t = new ThumbnailObjImpl();
 		t.setNameOfThumbnail("Funding Type");
 		Map<String,Map<Integer,String>> a = new HashMap<>();

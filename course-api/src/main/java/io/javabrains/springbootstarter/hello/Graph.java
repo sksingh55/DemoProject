@@ -1,17 +1,14 @@
 package io.javabrains.springbootstarter.hello;
 
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
-
+@Data
 public class Graph {
-
     private List<Double> data;
 
-    public void setData(List<Double> data){
-        this.data = data;
-    }
 
-    public List<Double> getData() {
-        return this.data;
-    }
 }
