@@ -7,8 +7,6 @@ import java.util.Map;
 
 public interface ThumbnailObjInterface {
 
-
-
-    public void insertTypeValue(String nameCorresValue, int value, String valueType);
+    public void insertThumbnailData(ThumbnailData data);
 
 }

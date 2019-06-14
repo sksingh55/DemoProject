@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ColorDirective } from './color.directive';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,11 @@ import { ColorDirective } from './color.directive';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    ColorDirective ,
+    ColorDirective,
+    FooterComponent ,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ChartsModule,
     HttpClientModule,

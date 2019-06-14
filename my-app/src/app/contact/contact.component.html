@@ -1,142 +1,56 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-xl-6 mb-3">
-      <div class="card shadow-sm card-sh-overview border-0 h-100">
-        <div class="card-header px-3 ch-icon-bg-05">
-          <div class="row">
-            <div class="col-auto">
-              <div class="item-icon">
-                <i class="mdi mdi-view-list"></i>
-              </div>
-            </div>
-            <div class="col align-self-center">
-              <h3 class="card-title">{{ response['cardName'] }}</h3>
-              <div class="no-of">Total # of Schools: <strong>32423</strong></div>
-            </div>
-          </div>
+  <div class="row" >
+    <div *ngFor="let response of Cards['card']" class="col-12  col-xl-{{response['size']}} mb-3">
+<div class="card shadow-sm card-sh-overview border-0 h-100">
+  <div class="card-header px-3 ch-icon-bg-05">
+    <div class="row">
+      <div class="col-auto">
+        <div class="item-icon">
+          <i class="{{ response['imageUrl'] }}"></i>
         </div>
-        <div class="card-body py-0 px-3">
-          <div class="form-row">
-            <div class="col-12 col-md-6 mb-3">
-              <div class="card sub-card border-0 shadow-sm m-0 h-100">
-                <div class="card-body">
-                  <h3 class="card-title">
-                    {{ response['thubmnailList']['0']['nameOfThumbnail'] }}
-                  </h3>
-                  <ul class="form-row list-unstyled">
-                    <li class="col">
-                      <h4>60%</h4>
-                      <p>Govt. Aided</p>
-                    </li>
-                    <li class="col">
-                      <h4>20%</h4>
-                      <p>Private</p>
-                    </li>
-                    <li class="col">
-                      <h4>10%</h4>
-                      <p>Unrecognized Category</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 mb-3">
-              <div class="card sub-card border-0 shadow-sm m-0 h-100">
-                <div class="card-body">
-                  <h3 class="card-title">
-                    Education Type(%)
-                  </h3>
-                  <ul class="form-row list-unstyled">
-                    <li class="col">
-                      <h4>10</h4>
-                      <p>Primary</p>
-                    </li>
-                    <li class="col">
-                      <h4>60</h4>
-                      <p>Upper Primary</p>
-                    </li>
-                    <li class="col">
-                      <h4>30</h4>
-                      <p>High Schools</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 mb-3">
-              <div class="card sub-card border-0 shadow-sm m-0 h-100">
-                <div class="card-body">
-
-                  <ul class="form-row list-unstyled">
-                    <li class="col">
-                      <h3 class="title">Dropout</h3>
-                      <h4>67 %</h4>
-                    </li>
-
-                    <li class="col">
-                      <h3 class="title">Kitchen Garden</h3>
-                      <h4>365</h4>
-                    </li>
-
-                    <li class="col">
-                      <h3 class="title">Bio Fencing</h3>
-                      <h4>478</h4>
-                    </li>
-
-                    <li class="col">
-                      <h3 class="title">Community Mobilization</h3>
-                      <h4>654</h4>
-                    </li>
-
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 mb-3">
-              <div class="card sub-card border-0 shadow-sm m-0 h-100">
-                <div class="card-body">
-                  <h3 class="card-title">
-                    Donation Received
-                  </h3>
-                  <ul class="form-row list-unstyled">
-                    <li class="col">
-                      <h4><i class="mdi mdi-currency-inr mr-1"></i> 5 <small>Cr</small></h4>
-                      <p>Purpose</p>
-                    </li>
-                    <li class="col">
-                      <h4><i class="mdi mdi-currency-inr mr-1"></i> 5 <small>Cr</small></h4>
-                      <p>Utilization</p>
-                    </li>
-
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 mb-3">
-              <div class="card sub-card border-0 shadow-sm m-0 h-100">
-                <div class="card-body">
-                  <h3 class="card-title">
-                    School Visit
-                  </h3>
-                  <ul class="form-row list-unstyled">
-                    <li class="col">
-                      <h4>50%</h4>
-                      <p>% of visit</p>
-                    </li>
-                    <li class="col">
-                      <h4>354</h4>
-                      <p>Issue Identified</p>
-                    </li>
-
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
+      <div class="col align-self-center">
+        <h3 class="card-title">{{ response['cardName'] }}</h3>
+        <div class="no-of">{{ response['cardValue'] }} </div>
       </div>
     </div>
   </div>
+
+   <div class="card-body py-0 px-3">
+
+
+    <div class="form-row" *ngFor="let row of response['data']" >
+
+      <div class="col" *ngFor="let thumbnail of row['thumbnailList']">
+        <div class="card sub-card border-0 m-0 h-100">
+          <div class="card-body">
+            <h3 class="card-title">
+              {{ thumbnail['nameOfThumbnail'] }}
+            </h3>
+
+            <ul class="form-row list-unstyled">
+
+              <li class="col"  *ngFor="let data of thumbnail['thumbnailData']">
+                <h4>{{data['value']}}{{data['type']}}</h4>
+                <p>{{data['footer']}}</p>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+   </div>
 </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 

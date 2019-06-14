@@ -5,8 +5,6 @@ import {Directive, ElementRef, Input} from '@angular/core';
 })
 export class ColorDirective {
 
-  constructor(el: ElementRef) {
-
-    el.nativeElement.style.backgroundColor = 'red';
+  constructor() {
   }
 }

@@ -2,17 +2,17 @@
 package io.javabrains.springbootstarter.hello;
 ;
 import lombok.Data;
-import lombok.Value;
-
+import java.util.ArrayList;
 import java.util.List;
 @Data
 public class CardObjImpl implements CardObjInterface {
 
-    private String imageUrl;
+    private String imageUrl = "mdi mdi-school";
     private String cardName;
     private String cardValue;
-    private List<ThumbnailObjImpl> thubmnailList;
-    public void insertThumbnail(ThumbnailObjImpl newThumbnail){
-        thubmnailList.add(newThumbnail);
+    private int size;
+    private List<rowData> data = new ArrayList<>();
+    public void insertRowData(rowData newdata){
+        this.data.add(newdata);
     }
 }

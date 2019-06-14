@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DataService} from "../data.service";
 
 @Component({
@@ -8,15 +8,15 @@ import {DataService} from "../data.service";
 })
 export class ContactComponent implements OnInit {
 
-  response : Object;
+
+  Cards : object;
 
   constructor(private data: DataService) { }
 
   ngOnInit() {
     this.data.getThumbnail().subscribe(data => {
         console.log(data);
-        this.response = data;
-        console.log(this.response['thubmnailList']['0']['nameOfThumbnail']);
+        this.Cards=data;
       }
     );
   }
